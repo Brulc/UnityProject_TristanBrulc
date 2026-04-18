@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52b5c00daf253a4ab13f47a62496447, type: 3}
+  m_Name: ManHeroDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::HeroDatabase
+  heroList:
+  - {fileID: 11400000, guid: f6e088215909ec84c9617e0e4dabaadb, type: 2}
+  - {fileID: 11400000, guid: fa5e87b9bc9228b468ed44c4a2588971, type: 2}
+  - {fileID: 11400000, guid: adb7b39132d9c3e44a1278324129d73e, type: 2}
+  - {fileID: 11400000, guid: e0b5d91465981dc4b8681812c77dd26b, type: 2}
+  - {fileID: 11400000, guid: 87da3c9c185450f42b992782890ee8e2, type: 2}
+  - {fileID: 11400000, guid: 0117e1745e96e99409b74bcecb5128fc, type: 2}
+  - {fileID: 11400000, guid: c2fd72f93f7b43445b9e799323f3c51a, type: 2}
+  - {fileID: 11400000, guid: 13115d76a954a764b85b566efd931a70, type: 2}
+  - {fileID: 11400000, guid: d95e38442394c474bbe0e201a31f38e6, type: 2}
+  - {fileID: 11400000, guid: 7e5064c022d386e4085284412cb64eaa, type: 2}

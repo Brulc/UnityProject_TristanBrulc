@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e85e015274a7a4a8b71da2e7263dbe, type: 3}
+  m_Name: Kabloom_Solar
+  m_EditorClassIdentifier: Assembly-CSharp::HeroInfo
+  HeroID: 26
+  team: 0
+  class1: 6
+  class2: 9
+  FullImage: {fileID: -255055344053659799, guid: cc6d5149ff2cf7741a3991be414f26f3, type: 3}
+  CardImage: {fileID: -9184629275262272498, guid: b216d84e53ca618459d1ee1a80a45ed6, type: 3}
+  premadeDecks:
+  - {fileID: 11400000, guid: 7e6bfca542abd9d40a85b7b66cb22af5, type: 2}

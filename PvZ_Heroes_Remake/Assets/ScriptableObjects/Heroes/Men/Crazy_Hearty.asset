@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e85e015274a7a4a8b71da2e7263dbe, type: 3}
+  m_Name: Crazy_Hearty
+  m_EditorClassIdentifier: Assembly-CSharp::HeroInfo
+  HeroID: 17
+  team: 1
+  class1: 2
+  class2: 3
+  FullImage: {fileID: -4008521827992241589, guid: 897c9531ad3e87240bf97a4147c593bc, type: 3}
+  CardImage: {fileID: 7346259784119868884, guid: 9db4bbbc1bfff254a8afaa9aa412f805, type: 3}
+  premadeDecks:
+  - {fileID: 11400000, guid: 0db6c6f4adeef9f45bdc18d4e2262633, type: 2}

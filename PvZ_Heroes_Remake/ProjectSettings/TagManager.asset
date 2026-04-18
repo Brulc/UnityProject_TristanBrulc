@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Lane
+  - Card
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Lane
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Card
+  - AddRemove
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 2243579687
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Minion
+    uniqueID: 2305943535
+    locked: 0
+  - name: Trick
+    uniqueID: 3910876501
+    locked: 0
+  - name: Card
+    uniqueID: 2446378065
+    locked: 0
+  - name: New Layer 5
+    uniqueID: 3960187149
+    locked: 0
+  m_RenderingLayers:
+  - Default

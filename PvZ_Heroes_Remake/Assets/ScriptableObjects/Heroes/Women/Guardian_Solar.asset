@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e85e015274a7a4a8b71da2e7263dbe, type: 3}
+  m_Name: Guardian_Solar
+  m_EditorClassIdentifier: Assembly-CSharp::HeroInfo
+  HeroID: 23
+  team: 0
+  class1: 5
+  class2: 9
+  FullImage: {fileID: -1907847230864524514, guid: 425500050f4e14c4c8d9be1a438ff9d6, type: 3}
+  CardImage: {fileID: -2399675022241525808, guid: 852f6af8d131c7b44970c44487e02d87, type: 3}
+  premadeDecks:
+  - {fileID: 11400000, guid: 636aed45137059f46bcf009b2d8580d6, type: 2}

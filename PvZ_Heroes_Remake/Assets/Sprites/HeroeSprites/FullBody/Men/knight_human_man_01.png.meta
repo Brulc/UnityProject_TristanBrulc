@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 897c9531ad3e87240bf97a4147c593bc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 300226613183570350
+    second: knight_human_man_01_0
+  - first:
+      213: -2247104711944461977
+    second: knight_human_man_01_1
+  - first:
+      213: 4486183448278934376
+    second: knight_human_man_01_2
+  - first:
+      213: -4996483289247544645
+    second: knight_human_man_01_3
+  - first:
+      213: 4359668821947478407
+    second: knight_human_man_01_4
+  - first:
+      213: 7648440912383002651
+    second: knight_human_man_01_5
+  - first:
+      213: 3116221162201344933
+    second: knight_human_man_01_6
+  - first:
+      213: -4302693270638474102
+    second: knight_human_man_01_7
+  - first:
+      213: 1348046465004639054
+    second: knight_human_man_01_8
+  - first:
+      213: -4008521827992241589
+    second: knight_human_man_01_9
+  - first:
+      213: 607796626162011760
+    second: knight_human_man_01_10
+  - first:
+      213: -7753969047055904195
+    second: knight_human_man_01_11
+  - first:
+      213: 8138801393697724839
+    second: knight_human_man_01_12
+  - first:
+      213: -238454636474835145
+    second: knight_human_man_01_13
+  - first:
+      213: -7528239105168335321
+    second: knight_human_man_01_14
+  - first:
+      213: -8542199382365835162
+    second: knight_human_man_01_15
+  - first:
+      213: -8491632974120364658
+    second: knight_human_man_01_16
+  - first:
+      213: -5554573227314176287
+    second: knight_human_man_01_17
+  - first:
+      213: 966222933474196387
+    second: knight_human_man_01_18
+  - first:
+      213: 3591455511658771570
+    second: knight_human_man_01_19
+  - first:
+      213: -3486198558680334686
+    second: knight_human_man_01_20
+  - first:
+      213: 5353522618621015123
+    second: knight_human_man_01_21
+  - first:
+      213: -3782693669762568253
+    second: knight_human_man_01_22
+  - first:
+      213: 2164773511321025907
+    second: knight_human_man_01_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: knight_human_man_01_0
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 2232
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea1ece6938e9a2400800000000000000
+      internalID: 300226613183570350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_1
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 2227
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 761a17f8b2ea0d0e0800000000000000
+      internalID: -2247104711944461977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_2
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 2239
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86327efc310224e30800000000000000
+      internalID: 4486183448278934376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_3
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 2215
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bba8932cbece8aab0800000000000000
+      internalID: -4996483289247544645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_4
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 2207
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 781768ee1b7a08c30800000000000000
+      internalID: 4359668821947478407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_5
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 2209
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1847249c78b42a60800000000000000
+      internalID: 7648440912383002651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_6
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 2207
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5abe096f2aa0f3b20800000000000000
+      internalID: 3116221162201344933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_7
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 2217
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c412a5443c944c0800000000000000
+      internalID: -4302693270638474102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_8
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 2208
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43925f1e1935b210800000000000000
+      internalID: 1348046465004639054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_9
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 46
+        width: 1336
+        height: 2164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a7f10b2aede58c0800000000000000
+      internalID: -4008521827992241589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_10
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 2209
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07e411eafc35f6800800000000000000
+      internalID: 607796626162011760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_11
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 2203
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32dbd6eb3e546490800000000000000
+      internalID: -7753969047055904195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_12
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 2202
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a99ec01fb4d2f070800000000000000
+      internalID: 8138801393697724839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_13
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 239
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f5fd185c6d0bcf0800000000000000
+      internalID: -238454636474835145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_14
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 245
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e9c309b62568790800000000000000
+      internalID: -7528239105168335321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_15
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 240
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 660f5859be2047980800000000000000
+      internalID: -8542199382365835162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_16
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 244
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e85df86fcc8a72a80800000000000000
+      internalID: -8491632974120364658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_17
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 238
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee1b0344113ae2b0800000000000000
+      internalID: -5554573227314176287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_18
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 185
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3abb09383a6b86d00800000000000000
+      internalID: 966222933474196387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_19
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 187
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2743a0f62c967d130800000000000000
+      internalID: 3591455511658771570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_20
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 172
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ae316da1e88e9fc0800000000000000
+      internalID: -3486198558680334686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_21
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 165
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 354bceb15788b4a40800000000000000
+      internalID: 5353522618621015123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_22
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 157
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfeeaf162c218bc0800000000000000
+      internalID: -3782693669762568253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_human_man_01_23
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 156
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37df6710a02da0e10800000000000000
+      internalID: 2164773511321025907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      knight_human_man_01_0: 300226613183570350
+      knight_human_man_01_1: -2247104711944461977
+      knight_human_man_01_10: 607796626162011760
+      knight_human_man_01_11: -7753969047055904195
+      knight_human_man_01_12: 8138801393697724839
+      knight_human_man_01_13: -238454636474835145
+      knight_human_man_01_14: -7528239105168335321
+      knight_human_man_01_15: -8542199382365835162
+      knight_human_man_01_16: -8491632974120364658
+      knight_human_man_01_17: -5554573227314176287
+      knight_human_man_01_18: 966222933474196387
+      knight_human_man_01_19: 3591455511658771570
+      knight_human_man_01_2: 4486183448278934376
+      knight_human_man_01_20: -3486198558680334686
+      knight_human_man_01_21: 5353522618621015123
+      knight_human_man_01_22: -3782693669762568253
+      knight_human_man_01_23: 2164773511321025907
+      knight_human_man_01_3: -4996483289247544645
+      knight_human_man_01_4: 4359668821947478407
+      knight_human_man_01_5: 7648440912383002651
+      knight_human_man_01_6: 3116221162201344933
+      knight_human_man_01_7: -4302693270638474102
+      knight_human_man_01_8: 1348046465004639054
+      knight_human_man_01_9: -4008521827992241589
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

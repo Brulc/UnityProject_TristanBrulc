@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e85e015274a7a4a8b71da2e7263dbe, type: 3}
+  m_Name: Beatsly_Sneaky
+  m_EditorClassIdentifier: Assembly-CSharp::HeroInfo
+  HeroID: 13
+  team: 1
+  class1: 0
+  class2: 4
+  FullImage: {fileID: -9173282137275217117, guid: ab8f756742797b34b897ba75331e01de, type: 3}
+  CardImage: {fileID: 5369509778273766046, guid: c1ab0110d43f1fe48aa19d8437f48106, type: 3}
+  premadeDecks:
+  - {fileID: 11400000, guid: 0014ed7d3736d464cad8cfcdbde9de2f, type: 2}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e85e015274a7a4a8b71da2e7263dbe, type: 3}
+  m_Name: Kabloom_MegaGrow
+  m_EditorClassIdentifier: Assembly-CSharp::HeroInfo
+  HeroID: 24
+  team: 0
+  class1: 6
+  class2: 7
+  FullImage: {fileID: -4670587591230048134, guid: b65e12db4902a75479048e9b2f942d2c, type: 3}
+  CardImage: {fileID: 7341824569590876754, guid: d2d7b2d515aa281419508f270586ad9d, type: 3}
+  premadeDecks:
+  - {fileID: 11400000, guid: 6664a7b573aadac44a35d5f3ecac0cb8, type: 2}

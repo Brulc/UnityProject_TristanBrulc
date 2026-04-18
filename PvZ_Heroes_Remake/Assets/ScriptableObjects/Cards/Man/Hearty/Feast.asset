@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca02a91b4c91924c863628ca068d59c, type: 3}
+  m_Name: Feast
+  m_EditorClassIdentifier: Assembly-CSharp::CardInfo
+  type: 0
+  cardTeam: 1
+  cardClass: 3
+  cardRarity: 2
+  cardName: Feast
+  cardImage: {fileID: 6437117973188020694, guid: 584566d9369c3274e8c0545a3ee311b5, type: 3}
+  cost: 2
+  health: 0
+  attack: 0
+  abilities: []
+  Amphibious: 0
+  Team_Up: 0

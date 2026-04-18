@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e85e015274a7a4a8b71da2e7263dbe, type: 3}
+  m_Name: Guardian_Kabloom
+  m_EditorClassIdentifier: Assembly-CSharp::HeroInfo
+  HeroID: 20
+  team: 0
+  class1: 5
+  class2: 6
+  FullImage: {fileID: -4835001423777880109, guid: 42d066d0cdbe164469dc2146ba708e3e, type: 3}
+  CardImage: {fileID: 202882202314537777, guid: eccceb61b5023014dae950bcd55c8dd3, type: 3}
+  premadeDecks:
+  - {fileID: 11400000, guid: 1d0fac79f0633c94d9a61bcd58102eb3, type: 2}

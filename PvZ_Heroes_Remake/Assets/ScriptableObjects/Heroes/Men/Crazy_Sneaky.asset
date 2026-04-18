@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e85e015274a7a4a8b71da2e7263dbe, type: 3}
+  m_Name: Crazy_Sneaky
+  m_EditorClassIdentifier: Assembly-CSharp::HeroInfo
+  HeroID: 18
+  team: 1
+  class1: 2
+  class2: 4
+  FullImage: {fileID: 7954121577505119471, guid: 5aeeb317635db1449b526c1a0c540670, type: 3}
+  CardImage: {fileID: -1212337716049916876, guid: 5dcade108b9f8644591f30ccb15d83d8, type: 3}
+  premadeDecks:
+  - {fileID: 11400000, guid: c13e363162d3152449c25649122d07b6, type: 2}
