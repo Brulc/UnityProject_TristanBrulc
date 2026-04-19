@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public enum GamePhase 
 {
     Start_Of_Turn,
@@ -7,5 +5,6 @@ public enum GamePhase
     Woman_play,
     Man_Tricks,
     Battle,
-    End_Of_Turn
+    End_Of_Turn,
+    Game_Over
 }

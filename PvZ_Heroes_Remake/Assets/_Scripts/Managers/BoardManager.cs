@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,6 +25,7 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private HeroDatabase ManHeroDatabase;
     [SerializeField] private HeroDatabase WomanHeroDatabase;
     #endregion
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -75,9 +77,9 @@ public class BoardManager : MonoBehaviour
     {
         Player tmp;
         HeroDatabase database = (team == Team.Man)? ManHeroDatabase:WomanHeroDatabase;
-        HeroInfo tmpHero = database.heroList[(int)Random.Range( 0, database.heroList.Count )];
+        HeroInfo tmpHero = database.heroList[(int)UnityEngine.Random.Range( 0, database.heroList.Count )];
         Deck tmpDeck = new();
-        tmpDeck.deckList = tmpHero.premadeDecks[(int)Random.Range(0, tmpHero.premadeDecks.Count)].deckList;
+        tmpDeck.deckList = tmpHero.premadeDecks[(int)UnityEngine.Random.Range(0, tmpHero.premadeDecks.Count)].deckList;
         tmp = new(
             tmpHero,
             tmpDeck,
@@ -101,17 +103,19 @@ public class BoardManager : MonoBehaviour
         UIManager.Instance.SpawnMinion(newMinion, laneInfo);
         Destroy(dropped);
     }
-    public void ResolveBattle()
+    public bool ResolveBattle()
     {
         foreach ( var lane in lanes )
         {
-            ResolveLane(lane);
+            if ( ResolveLane(lane) ) return true;
         }
+        return false;
     }
-    private void ResolveLane(LaneInfo lane)
+    private bool ResolveLane(LaneInfo lane)
     {
         List<MinionInfo> manMinions = new();
         List<MinionInfo> womanMinions = new();
+        // init minions in team
         foreach( var minion in lane.minionsInLane )
         {
             if ( minion.card.cardTeam == Team.Man)
@@ -119,6 +123,8 @@ public class BoardManager : MonoBehaviour
             else 
                 womanMinions.Add(minion);
         }
+
+
         if ( womanMinions.Count == 0)
         {
             foreach ( var minion in manMinions )
@@ -129,6 +135,10 @@ public class BoardManager : MonoBehaviour
             foreach ( var minion in manMinions )
                 minion.Attack(womanMinions[0]);
         }
+        UIManager.Instance.UpdateHeroes();
+        Debug.Log("It is a good day to be NOT dead!");
+        if ( DidHeroDie() ) return true;
+
         if ( manMinions.Count == 0)
         {
             foreach ( var minion in womanMinions )
@@ -142,8 +152,26 @@ public class BoardManager : MonoBehaviour
             foreach ( var minion in womanMinions )
                 minion.Attack(manMinions[0]);
         }
+
         UIManager.Instance.UpdateHeroes();
+        if ( DidHeroDie() ) return true;
         CleanUpLane(lane);
+        return false;
+    }
+    public Player GetWinner()
+    {
+        Debug.Log("Choosing winner...");
+        return ( womanPlayer.health <= 0 )? manPlayer:womanPlayer;
+    }
+    private bool DidHeroDie()
+    {
+        if ( womanPlayer.IsDead() || manPlayer.IsDead() )
+        {
+            Debug.Log("The heavy is dead!");
+            GameManager.Instance.phase = GamePhase.Game_Over;
+            return true;
+        }
+        return false;
     }
     private void CleanUpLane(LaneInfo lane)
     {
@@ -176,4 +204,5 @@ public class BoardManager : MonoBehaviour
         else
             UIManager.Instance.AddCard(womanPlayer.hand[womanPlayer.hand.Count-1]);
     }
+    
 }
