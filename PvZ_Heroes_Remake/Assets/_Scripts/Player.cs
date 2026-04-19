@@ -56,7 +56,8 @@ public class Player : IDamabagle, IHealable, ITeamAfiiliation
     }
     public void Die()
     {
-        Debug.Log("I died");
+        Debug.Log("I am dead!");
     }
     public Team GetTeam() { return hero.team; }
+    public bool IsDead() { return health <= 0; }
 }

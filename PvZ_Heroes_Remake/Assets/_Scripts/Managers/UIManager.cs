@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     [SerializeField] private Button turnButton;
+    [SerializeField] private GameObject victoryScreen;
+    [SerializeField] private Image winnerImage;
 
     #region Parents
     [SerializeField] private GameObject cardsParent;
@@ -181,5 +183,19 @@ public class UIManager : MonoBehaviour
     {
         player.UpdateHealth();
         enemy.UpdateHealth();
+    }
+    public void GameOverScreen(Player winner)
+    {
+        Debug.Log( winner.hero.HeroID );
+        victoryScreen.SetActive(true);
+        winnerImage.sprite = winner.hero.FullImage;
+    }
+    private void OnEnable()
+    {
+        GameManager.Instance.OnGameOver += GameOverScreen;
+    }
+    private void OnDisable()
+    {
+        GameManager.Instance.OnGameOver -= GameOverScreen;
     }
 }

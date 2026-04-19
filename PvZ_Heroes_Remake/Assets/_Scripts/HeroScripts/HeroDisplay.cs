@@ -16,8 +16,7 @@ public class HeroDisplay : MonoBehaviour
     }
     public void UpdateHealth()
     {
-        Debug.Log(player.hero.HeroID);
-        healthText.text = player.health.ToString();
+        healthText.text = (player.health < 0)? "0":player.health.ToString();
     }
     public void TakeDamage()
     {
