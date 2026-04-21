@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardMove : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class CardMove : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     private CanvasGroup canvasGroup;
     
@@ -19,12 +19,15 @@ public class CardMove : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             transform.SetParent(transform.root);
             transform.SetAsLastSibling();
             canvasGroup.blocksRaycasts = false;
-            GameObject dropped = eventData.pointerDrag;
-            CardInfo droppedCard = dropped.GetComponent<CardDisplay>().card;
-            if ( droppedCard.type == CardType.Minion )
+            GameObject dragged = eventData.pointerDrag;
+            CardInfo draggedCard = dragged.GetComponent<CardDisplay>().card;
+            if ( draggedCard.type == CardType.Minion )
                 UIManager.Instance.ShowDropBoxes();
-            else
-                UIManager.Instance.ShowTrickTarget( (droppedCard.cardTeam == Team.Man)? Team.Woman: Team.Man );
+            else if ( draggedCard.type == CardType.Trick ) 
+            {
+
+                UIManager.Instance.ShowTrickTarget( (draggedCard.cardTeam == Team.Man)? Team.Woman: Team.Man );
+            }
             
         }
     }
@@ -38,6 +41,10 @@ public class CardMove : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     
         canvasGroup.blocksRaycasts = true;
         UIManager.Instance.HideDropBoxes();
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        
     }
 }
 

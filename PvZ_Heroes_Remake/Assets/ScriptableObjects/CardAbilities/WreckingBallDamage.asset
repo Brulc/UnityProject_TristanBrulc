@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74a4674649089324d813e1ffd6ef5dfb, type: 3}
-  m_Name: RocketDamage
+  m_Name: WreckingBallDamage
   m_EditorClassIdentifier: Assembly-CSharp::DealDamageAbility
   abilityType: 0
-  description: Deal 6 damage.
-  damageAmount: 6
+  description: Deal 2 damage.
+  damageAmount: 2

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: FireballDamage
   m_EditorClassIdentifier: Assembly-CSharp::DealDamageAbility
   abilityType: 0
+  description: Do 3 damage.
   damageAmount: 3

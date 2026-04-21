@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Heal4
   m_EditorClassIdentifier: Assembly-CSharp::HealAbility
   abilityType: 0
+  description: Heal 4 health.
   healAmount: 4
