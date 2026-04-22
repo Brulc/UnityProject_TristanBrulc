@@ -21,4 +21,6 @@ MonoBehaviour:
   cost: 1
   health: 2
   attack: 1
+  Amphibious: 0
   abilities: []
+  tribes: 02000000

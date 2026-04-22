@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public static MenuManager Instance;
+
     /*
     * 0 main menu
     * 1 battle menu
@@ -13,7 +15,18 @@ public class MenuManager : MonoBehaviour
     const int battleMenu = 1;
     const int deckBuilder = 2;
     const int battleScene = 3;
-    
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
     public void ToBattleMenu()
     {
         SceneManager.LoadScene(battleMenu); // load battle menu

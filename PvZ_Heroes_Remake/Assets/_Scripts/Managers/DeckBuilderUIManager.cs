@@ -3,63 +3,57 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DeckBuilderUIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject heroButtonsParent;
-    [SerializeField] private HeroDatabase womanHeroes;
-    [SerializeField] private HeroDatabase manHeroes;
-    [SerializeField] private HeroSelectButton button;
-    [SerializeField] private CardDatabase cardPool;
+    public static DeckBuilderUIManager Instance;
+
+    #region References
+    [SerializeField] private HeroSelectButton referenceHeroButton;
     [SerializeField] private CardButton referenceCardButton;
+    #endregion
+
+    #region Card Buttons
     private CardButton cardButton;
+    private List<CardButton> cardButtons;
+    // ni isti reference sam koga jebe
+    [SerializeField] private GameObject cardDescription;
+    #endregion
+
+    #region Parents
+    [SerializeField] private GameObject heroButtonsParent;
     [SerializeField] private GameObject availableCards;
     [SerializeField] private GameObject deckCards;
+    #endregion
 
     [SerializeField] private Button confirmButton;
     [SerializeField] private Button cancelButton;
-    [SerializeField] private MenuManager menuManager;
 
-    private Dictionary<CardInfo, int> cardDictionary;
     [HideInInspector] public Dictionary<CardInfo, CardButton> deckButtonDictionary;
     [HideInInspector] public Dictionary<CardInfo, CardButton> availableButtonDictionary;
 
-    [HideInInspector] public Deck deck;
-    [HideInInspector] public HeroInfo chosenHero;
-
     void Awake ()
     {
-        HeroDatabase tmpDatabase = (SessionChoices.Instance.chosenTeam == Team.Man)? manHeroes:womanHeroes;
-        foreach ( var hero in tmpDatabase.heroList)
-        {
-            HeroSelectButton newButton = Instantiate(button, heroButtonsParent.transform);
-            newButton.SetHero(hero);
-            newButton.Initialize();
-        }
-        deck = new();
-        cardDictionary = new();
+        Instance = this;
+        
         deckButtonDictionary = new();
         availableButtonDictionary = new();
+        cardButtons = new();
         cardButton = referenceCardButton;
-        foreach(CardInfo card in cardPool.allCards)
-        {
-            cardDictionary.Add(card, SessionChoices.Instance.deck.cardLimit);
-        }
+        
     }
-    public void DrawAvailableCards() // nujno jih zapiši v list da jih lahko odstraniš al pa razdel v UI in logic
+    public void EraseAllCards()
     {
-        foreach( CardInfo card in cardPool.allCards )
-        {
-            if ( card.cardClass == chosenHero.class1 || card.cardClass == chosenHero.class2 )
-            {
-                if ( cardDictionary.ContainsKey(card))
-                {
-                    cardButton = Instantiate( cardButton, availableCards.transform );
-                    cardButton.Initialize(card, cardDictionary[card] - (
-                        (deck.deckCount.ContainsKey(card))? deck.deckCount[card]:0),
-                        false 
-                    );
-                    availableButtonDictionary.Add(card, cardButton);
-                }
-            }
+        foreach ( var button in cardButtons ) 
+        { 
+            Destroy(button.gameObject); 
         }
+        deckButtonDictionary = new();
+        availableButtonDictionary = new();
+    }
+    public void DrawStartCards( CardInfo card, int count )
+    {
+        cardButton = Instantiate( referenceCardButton, availableCards.transform );
+        cardButton.Initialize( card, count, false );
+        cardButtons.Add(cardButton);
+        availableButtonDictionary.Add(card, cardButton);
     }
     public void DrawCard(CardInfo card, bool addCard)
     {
@@ -67,10 +61,11 @@ public class DeckBuilderUIManager : MonoBehaviour
         {
             if ( !deckButtonDictionary.ContainsKey(card))
             {
-                cardButton = Instantiate( cardButton, deckCards.transform );
+                cardButton = Instantiate( referenceCardButton, deckCards.transform );
                 cardButton.Initialize(card, 1, true);
                 cardButton.DisableButtons();
                 deckButtonDictionary.Add(card, cardButton);
+                cardButtons.Add(cardButton);
             }
             else
             {
@@ -82,28 +77,36 @@ public class DeckBuilderUIManager : MonoBehaviour
         {
             if ( !availableButtonDictionary.ContainsKey(card))
             {
-                cardButton = Instantiate( cardButton, availableCards.transform );
+                cardButton = Instantiate( referenceCardButton, availableCards.transform );
                 cardButton.Initialize(card, 1, false);
                 cardButton.DisableButtons();
                 availableButtonDictionary.Add(card, cardButton);
+                cardButtons.Add(cardButton);
             }
             else
             {
                 cardButton = availableButtonDictionary[card];
                 cardButton.IncrementCount();
+                cardButtons.Add(cardButton);
             }
 
         }
-        
     }
-    public void ConfirmDeck()
+    public void DrawHeroButton(HeroInfo hero)
     {
-        SessionChoices.Instance.chosenHero = chosenHero;
-        SessionChoices.Instance.deck = deck;
-        menuManager.ToBattleMenu();
+        HeroSelectButton newButton = Instantiate(referenceHeroButton, heroButtonsParent.transform);
+        newButton.SetHero(hero);
+        newButton.Initialize();
     }
-    public void Cancel()
+    
+    public void ShowInfoScreen(CardInfo card)
     {
-        menuManager.ToBattleMenu();
+        Debug.Log("IShowInfo");
+        cardDescription.SetActive(true);
+        cardDescription.GetComponent<CardDescription>().Show(card);
+    }
+    public void HideInfoScreen()
+    {
+        cardDescription.SetActive(false);
     }
 }

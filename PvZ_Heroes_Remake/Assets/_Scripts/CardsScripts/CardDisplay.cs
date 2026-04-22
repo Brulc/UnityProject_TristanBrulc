@@ -10,10 +10,10 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI cardCostText;
     public TextMeshProUGUI cardAttackText;
     public TextMeshProUGUI cardHealthText;
-    public Image rarityImage;
-    public Image classColorImage;
     [SerializeField] private Image attackBubble;
     [SerializeField] private Image healthBubble;
+    public Image rarityImage;
+    public Image classColorImage;
 
     public void Initialize(CardInfo cardInfo)
     {

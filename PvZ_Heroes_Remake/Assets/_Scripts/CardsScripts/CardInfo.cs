@@ -18,8 +18,10 @@ public class CardInfo : ScriptableObject
     public int health;
     public int attack;
     
-    public List<CardAbility> abilities;
     public bool Amphibious;
-    public bool Team_Up;
+
+    public List<CardAbility> abilities;
+    public List<Tribe> tribes;
+    // public bool Team_Up;
 }
 

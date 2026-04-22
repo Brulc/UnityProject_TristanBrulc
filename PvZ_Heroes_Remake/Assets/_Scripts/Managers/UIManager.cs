@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private Image winnerImage;
 
+    #region Info parts
+    [SerializeField] private GameObject cardDescription;
+    #endregion
     #region Parents
     [SerializeField] private GameObject cardsParent;
     [SerializeField] private GameObject minions;
@@ -184,6 +187,14 @@ public class UIManager : MonoBehaviour
         player.UpdateHealth();
         enemy.UpdateHealth();
     }
+    public void ShowInfoScreen (PointerEventData eventData)
+    {
+        cardDescription.SetActive(true);
+        GameObject dropped = eventData.pointerDrag;
+        CardInfo card = dropped.GetComponent<CardDisplay>().card;
+        cardDescription.GetComponent<CardDescription>().Show(card);
+    }
+    public void HideInfoScreen() { cardDescription.SetActive(false); }
     public void GameOverScreen(Player winner)
     {
         Debug.Log( winner.hero.HeroID );

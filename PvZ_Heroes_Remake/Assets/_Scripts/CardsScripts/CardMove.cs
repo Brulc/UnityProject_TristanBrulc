@@ -44,7 +44,8 @@ public class CardMove : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+        Debug.Log("clicked");
+        UIManager.Instance.ShowInfoScreen(eventData);
     }
 }
 

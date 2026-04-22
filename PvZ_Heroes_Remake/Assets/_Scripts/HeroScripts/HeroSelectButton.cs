@@ -7,13 +7,13 @@ public class HeroSelectButton : MonoBehaviour
     [SerializeField] private Image LeftClassColour;
     [SerializeField] private Image RightClassColour;
     private HeroInfo hero;
-    [SerializeField] private DeckBuilderUIManager deckBuilder;
     
     public void SetHero ( HeroInfo displayedHero ) { hero = displayedHero; }
     public void OnClick()
     {
-        deckBuilder.chosenHero = hero;
-        deckBuilder.DrawAvailableCards();
+        DeckBuilderManager.Instance.chosenHero = hero;
+        DeckBuilderManager.Instance.ResetDeckBuilder();
+        DeckBuilderManager.Instance.DrawAvailableCards();
     }
     public void Initialize ()
     {

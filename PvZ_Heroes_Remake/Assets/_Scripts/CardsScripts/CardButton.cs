@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using NUnit.Framework;
 
 public class CardButton : MonoBehaviour
 {
+    
     private CardInfo card;
     [SerializeField] private Image cardImage;
     [SerializeField] TextMeshProUGUI cardCostText;
@@ -17,18 +17,19 @@ public class CardButton : MonoBehaviour
 
     [SerializeField] private GameObject addCardButton;
     [SerializeField] private GameObject removeCardButton;
+    [SerializeField] private GameObject infoButton;
     private bool isInDeck;
 
     private int count;
     [SerializeField] TextMeshProUGUI countText;
 
-    [SerializeField] private DeckBuilderUIManager deckBuilder;
     public void OnClick()
     {
         if ( !addCardButton.activeInHierarchy )
         {
             if (!isInDeck) { addCardButton.SetActive(true); }
             else { removeCardButton.SetActive(true); }
+            infoButton.SetActive(true);
         }
         else
         {
@@ -39,34 +40,39 @@ public class CardButton : MonoBehaviour
     {
         addCardButton.SetActive(false);
         removeCardButton.SetActive(false);
+        infoButton.SetActive(false);
     }
     public void AddToDeck()
     {
         Debug.Log("Add to deck");
-        deckBuilder.deck.AddCard(card);
-        deckBuilder.DrawCard(card, true);
+        DeckBuilderManager.Instance.deck.AddCard(card);
+        DeckBuilderUIManager.Instance.DrawCard(card, true);
         //transform.SetParent(deckBuilder.deckCards.transform);
         count--;
         countText.text = count.ToString();
         if (count==0)
         {
-            deckBuilder.availableButtonDictionary.Remove(card);
+            DeckBuilderUIManager.Instance.availableButtonDictionary.Remove(card);
             Destroy(this.gameObject);
         }
     }
     public void RemoveFromDeck()
     {
         Debug.Log("Remove from deck");
-        deckBuilder.deck.RemoveCard(card);
-        deckBuilder.DrawCard(card, false);
+        DeckBuilderManager.Instance.deck.RemoveCard(card);
+        DeckBuilderUIManager.Instance.DrawCard(card, false);
         //transform.SetParent(deckBuilder.availableCards.transform);
         count--;
         countText.text = count.ToString();
         if (count==0)
         {
-            deckBuilder.deckButtonDictionary.Remove(card);
+            DeckBuilderUIManager.Instance.deckButtonDictionary.Remove(card);
             Destroy(this.gameObject);
         }
+    }
+    public void ShowInfo()
+    {
+        DeckBuilderUIManager.Instance.ShowInfoScreen(card);
     }
     public void Initialize(CardInfo cardInfo, int count, bool inDeck)
     {
