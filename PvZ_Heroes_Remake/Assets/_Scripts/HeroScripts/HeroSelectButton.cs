@@ -11,6 +11,7 @@ public class HeroSelectButton : MonoBehaviour
     public void SetHero ( HeroInfo displayedHero ) { hero = displayedHero; }
     public void OnClick()
     {
+        Debug.Log("I am clicked");
         DeckBuilderManager.Instance.chosenHero = hero;
         DeckBuilderManager.Instance.ResetDeckBuilder();
         DeckBuilderManager.Instance.DrawAvailableCards();

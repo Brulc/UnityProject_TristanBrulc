@@ -35,7 +35,7 @@ public class DeckBuilderManager : MonoBehaviour
         {
             if ( card.cardClass == chosenHero.class1 || card.cardClass == chosenHero.class2 )
             {
-                if ( cardDictionary.ContainsKey(card))
+                if ( !cardDictionary.ContainsKey(card))
                 {
                     cardDictionary.Add(card, SessionChoices.Instance.deck.cardLimit);
                     DeckBuilderUIManager.Instance.DrawStartCards(
@@ -59,6 +59,7 @@ public class DeckBuilderManager : MonoBehaviour
     {
         deck = new();
         cardDictionary = new();
+        DeckBuilderUIManager.Instance.EraseAllCards();
     }
     public void ConfirmDeck()
     {

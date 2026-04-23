@@ -47,6 +47,7 @@ public class DeckBuilderUIManager : MonoBehaviour
         }
         deckButtonDictionary = new();
         availableButtonDictionary = new();
+        cardButtons = new();
     }
     public void DrawStartCards( CardInfo card, int count )
     {
