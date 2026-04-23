@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -126,11 +127,22 @@ public class UIManager : MonoBehaviour
             minion.HideTrickTarget();
         }
     }
-    public void ShowDropBoxes()
+    public void ShowDropBoxes(bool amphibious)
     {
         foreach ( var lane in laneList )
         {
-            lane.ShowDropBox();
+            if ( lane.dropBox.transform.childCount < 1 )
+            {
+                switch(lane.laneInfo.type)
+                {
+                    case LaneType.Water:
+                        if ( amphibious ) lane.ShowDropBox();
+                        break;
+                    default:
+                        lane.ShowDropBox();
+                        break;
+                }
+            }
         }
     }
     public void HideDropBoxes()
@@ -186,6 +198,8 @@ public class UIManager : MonoBehaviour
     {
         player.UpdateHealth();
         enemy.UpdateHealth();
+        player.UpdateMana();
+        enemy.UpdateMana();
     }
     public void ShowInfoScreen (PointerEventData eventData)
     {
@@ -197,10 +211,11 @@ public class UIManager : MonoBehaviour
     public void HideInfoScreen() { cardDescription.SetActive(false); }
     public void GameOverScreen(Player winner)
     {
-        Debug.Log( winner.hero.HeroID );
+        // Debug.Log( winner.hero.HeroID );
         victoryScreen.SetActive(true);
         winnerImage.sprite = winner.hero.FullImage;
     }
+    public void BackToMenu() { MenuManager.Instance.ToBattleMenu(); }
     private void OnEnable()
     {
         GameManager.Instance.OnGameOver += GameOverScreen;

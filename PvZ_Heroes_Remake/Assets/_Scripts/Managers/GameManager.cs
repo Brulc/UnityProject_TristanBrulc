@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GamePhase phase;
     public event Action<Player> OnGameOver;
+        public int turnCount;
 
     void Awake()
     {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
+        turnCount = 0;
     }
     void Start()
     {
@@ -36,7 +38,9 @@ public class GameManager : MonoBehaviour
         switch(phase)
         {
             case GamePhase.Start_Of_Turn:
+                turnCount++;
                 Debug.Log(phase);
+                BoardManager.Instance.GiveMana(turnCount);
                 BoardManager.Instance.DrawCards();
                 AdvanceTurn();
                 break;
@@ -74,5 +78,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public bool[] GetCurrentPlayability(CardInfo card)
+    {
+        switch(phase)
+        {
+            case GamePhase.Man_Minions:
+                if ( card.cardTeam == Team.Man && card.type == CardType.Minion )
+                    return new bool[] {true, false};
+                break;
+            case GamePhase.Woman_play:
+                if ( card.cardTeam == Team.Woman )
+                    return new bool[] {true, true};
+                break;
+            case GamePhase.Man_Tricks:
+                if ( card.cardTeam == Team.Man && card.type == CardType.Minion )
+                    return new bool[] {false, true};
+                break;
+            default:
+                return new bool[] {false, false};  
+        }
+        return new bool[] {false, false};
+    }
 }

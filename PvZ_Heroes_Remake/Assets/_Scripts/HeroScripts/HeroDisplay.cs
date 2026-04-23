@@ -7,16 +7,22 @@ public class HeroDisplay : MonoBehaviour
     public Image BodyImage;
     public Player player;
     public TextMeshProUGUI healthText;
+    public TextMeshProUGUI manaText;
     public void Initialize(Player player) 
     {
         this.player = player;
         BodyImage.preserveAspect = true;
         BodyImage.sprite = player.hero.FullImage;
+        UpdateMana();
         UpdateHealth();
     }
     public void UpdateHealth()
     {
         healthText.text = (player.health < 0)? "0":player.health.ToString();
+    }
+    public void UpdateMana()
+    {
+        manaText.text = player.mana.ToString();
     }
     public void TakeDamage()
     {

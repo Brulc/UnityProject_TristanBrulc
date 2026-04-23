@@ -18,7 +18,7 @@ public class BoardManager : MonoBehaviour
     #region Game data
     private const int healthAmount = 20;
     private const int startingCards = 4;
-    public int turnCount;
+
     #endregion
     
     #region Databases
@@ -102,6 +102,10 @@ public class BoardManager : MonoBehaviour
         laneInfo.minionsInLane.Add(newMinion);
         UIManager.Instance.SpawnMinion(newMinion, laneInfo);
         Destroy(dropped);
+
+        if (droppedCard.cardTeam == Team.Man) manPlayer.mana -= droppedCard.cost;
+        else womanPlayer.mana -= droppedCard.cost;
+        UIManager.Instance.UpdateHeroes();
     }
     public bool ResolveBattle()
     {
@@ -191,10 +195,6 @@ public class BoardManager : MonoBehaviour
 
         UIManager.Instance.RemoveMinion(minion);
     }
-    public bool CheckPlayability()
-    {
-        return true;
-    }
     public void DrawCards()
     {
         manPlayer.DrawCard();
@@ -203,6 +203,16 @@ public class BoardManager : MonoBehaviour
             UIManager.Instance.AddCard(manPlayer.hand[manPlayer.hand.Count-1]);
         else
             UIManager.Instance.AddCard(womanPlayer.hand[womanPlayer.hand.Count-1]);
+        ResolveAbilities(AbilityType.Card_Drawn);
     }
-    
+    public void ResolveAbilities(AbilityType type)
+    {
+        
+    }
+    public void GiveMana ( int mana )
+    {
+        womanPlayer.mana = mana;
+        manPlayer.mana = mana;
+        UIManager.Instance.UpdateHeroes();
+    }
 }

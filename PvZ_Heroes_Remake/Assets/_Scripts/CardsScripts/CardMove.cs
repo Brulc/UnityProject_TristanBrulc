@@ -13,22 +13,29 @@ public class CardMove : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if ( BoardManager.Instance.CheckPlayability())
+        GameObject dragged = eventData.pointerDrag;
+        CardInfo draggedCard = dragged.GetComponent<CardDisplay>().card;
+        var playability = GameManager.Instance.GetCurrentPlayability(draggedCard); //minion, trick
+        if ( draggedCard.cost <= ((draggedCard.cardTeam == Team.Man)? BoardManager.Instance.manPlayer.mana:BoardManager.Instance.womanPlayer.mana) )
         {
-            parentAfterDrag = transform.parent;
-            transform.SetParent(transform.root);
-            transform.SetAsLastSibling();
-            canvasGroup.blocksRaycasts = false;
-            GameObject dragged = eventData.pointerDrag;
-            CardInfo draggedCard = dragged.GetComponent<CardDisplay>().card;
-            if ( draggedCard.type == CardType.Minion )
-                UIManager.Instance.ShowDropBoxes();
-            else if ( draggedCard.type == CardType.Trick ) 
+            if ( playability[0] )
             {
+                parentAfterDrag = transform.parent;
+                transform.SetParent(transform.root);
+                transform.SetAsLastSibling();
+                canvasGroup.blocksRaycasts = false;
+                
+                UIManager.Instance.ShowDropBoxes(draggedCard.Amphibious);
+            }
+            else if ( playability[1] )
+            {
+                parentAfterDrag = transform.parent;
+                transform.SetParent(transform.root);
+                transform.SetAsLastSibling();
+                canvasGroup.blocksRaycasts = false;
 
                 UIManager.Instance.ShowTrickTarget( (draggedCard.cardTeam == Team.Man)? Team.Woman: Team.Man );
             }
-            
         }
     }
     public void OnDrag(PointerEventData eventData)

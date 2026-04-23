@@ -22,13 +22,13 @@ public class LaneDisplay : MonoBehaviour, IDropHandler
                 laneImage.color = Color.darkGreen;
                 break;
             case LaneType.Water:
-                laneImage.color = Color.lightBlue;
+                laneImage.color = Color.blue;
                 break;
         }
     }
     public void OnDrop(PointerEventData eventData)
     {
-        if ( eventData.pointerDrag != null )
+        if ( eventData.pointerDrag != null && dropBox.transform.childCount < 1 )
         {
             
             BoardManager.Instance.SpawnMinionEvent(eventData, this.laneInfo);

@@ -22,5 +22,6 @@ MonoBehaviour:
   health: 2
   attack: 1
   Amphibious: 0
-  abilities: []
+  abilities:
+  - {fileID: 11400000, guid: dd64b88c47647c04f91fd47e98fcc652, type: 2}
   tribes: 02000000

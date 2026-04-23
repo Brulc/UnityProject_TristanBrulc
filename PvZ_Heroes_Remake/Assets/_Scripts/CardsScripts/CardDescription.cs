@@ -61,8 +61,9 @@ public class CardDescription : MonoBehaviour, IPointerClickHandler
         tmpString = new();
         foreach ( var ability in card.abilities )
         {
-            tmpString.Append(ability.description + "\n");
+            tmpString.Append(ability.abilityType.ToString().Replace("_"," ") + ": " + ability.description + "\n");
         }
+        descriptionOfCard.text = tmpString.ToString();
     }
     public void OnPointerClick(PointerEventData eventData)
     {

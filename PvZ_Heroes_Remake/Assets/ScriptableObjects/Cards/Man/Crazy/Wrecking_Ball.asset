@@ -21,6 +21,7 @@ MonoBehaviour:
   cost: 1
   health: 0
   attack: 0
-  abilities: []
   Amphibious: 0
-  Team_Up: 0
+  abilities:
+  - {fileID: 11400000, guid: 3d68098aef66c8144a0823cfddd526f6, type: 2}
+  tribes: 02000000
