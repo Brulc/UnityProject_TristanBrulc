@@ -440,7 +440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09788382162dff46837f46cf681fa87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardManager
-  turnCount: 0
   ManHeroDatabase: {fileID: 11400000, guid: d6ec8bacd48a7f143ae5be2b2bf0b2e9, type: 2}
   WomanHeroDatabase: {fileID: 11400000, guid: 1b64d52a34889cd4d9e224d9cf4c1564, type: 2}
 --- !u!1 &332223063
@@ -684,6 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   phase: 0
+  turnCount: 0
 --- !u!1 &436929535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,7 +1772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100.07
+  m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
