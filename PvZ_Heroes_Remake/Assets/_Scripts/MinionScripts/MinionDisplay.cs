@@ -1,8 +1,9 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class MinionDisplay : MonoBehaviour
+public class MinionDisplay : MonoBehaviour, IDropHandler
 {
     // a bom info tuki zapisu al pa posebi
     [HideInInspector] public MinionInfo minion;
@@ -17,7 +18,7 @@ public class MinionDisplay : MonoBehaviour
     {
         this.minion = minion;
         minionImage.sprite = minion.card.cardImage;
-    
+        trickTarget.enabled = false;
         DisplayCard(true);
     }
     private void DisplayCard(bool initialisation)
@@ -55,5 +56,9 @@ public class MinionDisplay : MonoBehaviour
     {
         attackText.text = minion.attack.ToString();
         healthText.text = minion.health.ToString();
+    }
+    public void OnDrop(PointerEventData eventData)
+    {
+        BoardManager.Instance.OnPlayedAbility(eventData, minion);
     }
 }

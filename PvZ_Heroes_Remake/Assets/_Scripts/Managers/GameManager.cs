@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         BoardManager.Instance.Initialize();
-        phase = GamePhase.Man_Minions;
+        phase = GamePhase.Start_Of_Turn;
         Gameloop();
     }
     public void AdvanceTurn()
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
                     return new bool[] {true, true};
                 break;
             case GamePhase.Man_Tricks:
-                if ( card.cardTeam == Team.Man && card.type == CardType.Minion )
+                if ( card.cardTeam == Team.Man && card.type == CardType.Trick )
                     return new bool[] {false, true};
                 break;
             default:

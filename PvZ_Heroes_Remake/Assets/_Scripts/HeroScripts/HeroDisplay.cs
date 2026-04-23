@@ -2,12 +2,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HeroDisplay : MonoBehaviour
+using UnityEngine.EventSystems;
+
+public class HeroDisplay : MonoBehaviour, IDropHandler
 {
     public Image BodyImage;
     public Player player;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI manaText;
+    [SerializeField] private Image trickTarget;
     public void Initialize(Player player) 
     {
         this.player = player;
@@ -15,6 +18,7 @@ public class HeroDisplay : MonoBehaviour
         BodyImage.sprite = player.hero.FullImage;
         UpdateMana();
         UpdateHealth();
+        trickTarget.enabled = false;
     }
     public void UpdateHealth()
     {
@@ -23,6 +27,12 @@ public class HeroDisplay : MonoBehaviour
     public void UpdateMana()
     {
         manaText.text = player.mana.ToString();
+    }
+    public void ShowTrickTarget() { trickTarget.enabled = true; Debug.Log("show me yo willy"); }
+    public void HideTrickTarget() { trickTarget.enabled = false; }
+    public void OnDrop(PointerEventData eventData)
+    {
+        BoardManager.Instance.OnPlayedAbility(eventData, player);
     }
     public void TakeDamage()
     {

@@ -209,8 +209,26 @@ public class BoardManager : MonoBehaviour
     {
         
     }
+    public void OnPlayedAbility(PointerEventData eventData, ICardTarget target)
+    {
+        GameObject dropped = eventData.pointerDrag;
+        CardInfo card = dropped.GetComponent<CardDisplay>().card;
+        Player tmp;
+        if ( card.cardTeam == Team.Man ) tmp = manPlayer;
+        else tmp = womanPlayer;
+
+        foreach( var ability in card.abilities )
+        {
+            ability.Execute(tmp, target);
+        }
+        if (card.cardTeam == Team.Man) manPlayer.mana -= card.cost;
+        else womanPlayer.mana -= card.cost;
+        Destroy(dropped);
+        UIManager.Instance.UpdateHeroes();
+    }
     public void GiveMana ( int mana )
     {
+        Debug.Log(mana);
         womanPlayer.mana = mana;
         manPlayer.mana = mana;
         UIManager.Instance.UpdateHeroes();

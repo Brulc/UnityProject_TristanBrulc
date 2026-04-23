@@ -119,6 +119,10 @@ public class UIManager : MonoBehaviour
             if ( minion.minion.card.cardTeam == team )
                 minion.ShowTrickTarget();
         }
+        if ( player.player.hero.team == team )
+            player.ShowTrickTarget(); //UnityEngine.Debug.Log("Target maybe shown or not idk");
+        else 
+            enemy.ShowTrickTarget();
     }
     public void HideTrickTarget ()
     {
@@ -126,6 +130,8 @@ public class UIManager : MonoBehaviour
         {
             minion.HideTrickTarget();
         }
+        player.HideTrickTarget();
+        enemy.HideTrickTarget();
     }
     public void ShowDropBoxes(bool amphibious)
     {
