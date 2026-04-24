@@ -52,7 +52,7 @@ public class MinionDisplay : MonoBehaviour, IDropHandler
         minionImage.color = Color.limeGreen;
         UpdateMinion();
     }
-    private void UpdateMinion()
+    public void UpdateMinion()
     {
         attackText.text = minion.attack.ToString();
         healthText.text = minion.health.ToString();

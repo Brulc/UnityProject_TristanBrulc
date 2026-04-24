@@ -13,7 +13,7 @@ public class BoardManager : MonoBehaviour
     [HideInInspector] public Player womanPlayer;
     #endregion
 
-    private List<LaneInfo> lanes;
+    public List<LaneInfo> lanes;
 
     #region Game data
     private const int healthAmount = 20;
@@ -53,6 +53,8 @@ public class BoardManager : MonoBehaviour
         {
             manPlayer = new(SessionChoices.Instance.chosenHero, SessionChoices.Instance.deck, healthAmount);
             womanPlayer = GeneratePlayer(Team.Woman);
+            GameManager.Instance.manPlay = new HumanPlay();
+            GameManager.Instance.womanPlay = new AIPlay(womanPlayer);
 
             manPlayer.InitializeHand(startingCards);
             womanPlayer.InitializeHand(startingCards);
@@ -63,6 +65,8 @@ public class BoardManager : MonoBehaviour
         {
             womanPlayer = new(SessionChoices.Instance.chosenHero, SessionChoices.Instance.deck, healthAmount);
             manPlayer = GeneratePlayer(Team.Man);
+            GameManager.Instance.womanPlay = new HumanPlay();
+            GameManager.Instance.manPlay = new AIPlay(manPlayer);
 
             manPlayer.InitializeHand(startingCards);
             womanPlayer.InitializeHand(startingCards);
@@ -92,7 +96,9 @@ public class BoardManager : MonoBehaviour
     {
         MinionInfo newMinion = new(card);
         laneInfo.minionsInLane.Add(newMinion);
-        UIManager.Instance.SpawnMinion(newMinion, laneInfo);
+        UIManager.Instance.SpawnEnemyMinion(newMinion, laneInfo);
+        if (card.cardTeam == Team.Man) manPlayer.mana -= card.cost;
+        else womanPlayer.mana -= card.cost;
     }
     public void SpawnMinionEvent(PointerEventData eventData, LaneInfo laneInfo)
     {
@@ -182,7 +188,7 @@ public class BoardManager : MonoBehaviour
         for (int i = lane.minionsInLane.Count - 1; i >= 0; i--)
         {
             var minion = lane.minionsInLane[i];
-
+            minion.minionDisplay.GetComponent<MinionDisplay>().UpdateMinion();
             if (minion.IsDead())
             {
                 RemoveMinion(minion, lane);
@@ -225,6 +231,10 @@ public class BoardManager : MonoBehaviour
         else womanPlayer.mana -= card.cost;
         Destroy(dropped);
         UIManager.Instance.UpdateHeroes();
+        foreach( var lane in lanes )
+        {
+            CleanUpLane(lane);
+        }
     }
     public void GiveMana ( int mana )
     {

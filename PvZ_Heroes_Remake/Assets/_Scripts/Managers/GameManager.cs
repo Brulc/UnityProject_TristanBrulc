@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GamePhase phase;
     public event Action<Player> OnGameOver;
-        public int turnCount;
+    public int turnCount;
+    public IPlayerController manPlay;
+    public IPlayerController womanPlay;
 
     void Awake()
     {
@@ -47,15 +49,18 @@ public class GameManager : MonoBehaviour
 
             case GamePhase.Man_Minions:
                 Debug.Log(phase);
+                manPlay.Play();
                 break;
 
             case GamePhase.Woman_play:
                 Debug.Log(phase);
-                AdvanceTurn();      // tmp solution
+                womanPlay.Play();
+                //AdvanceTurn();      // tmp solution
                 break;
 
             case GamePhase.Man_Tricks:
                 Debug.Log(phase);
+                manPlay.Play();
                 break;
 
             case GamePhase.Battle:

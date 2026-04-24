@@ -108,6 +108,20 @@ public class UIManager : MonoBehaviour
         }
         HideDropBoxes();
     }
+    public void SpawnEnemyMinion(MinionInfo minionInfo, LaneInfo lane)
+    {
+        foreach ( var ld in laneList )
+        {
+            if ( ld.laneInfo.laneID == lane.laneID )
+            {
+                MinionDisplay minion = Instantiate(referenceMinion, ld.enemyDropBox.transform);
+                minion.Initialize(minionInfo);
+                minionList.Add(minion);
+                minionInfo.minionDisplay = minion.gameObject;
+                break;
+            }
+        }
+    }
     public void RemoveMinion(MinionInfo minion)
     {
         Destroy(minion.minionDisplay);

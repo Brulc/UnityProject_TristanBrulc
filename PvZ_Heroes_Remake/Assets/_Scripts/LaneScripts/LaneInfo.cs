@@ -16,4 +16,12 @@ public class LaneInfo
         teamUpOccupation = false;
         minionsInLane = new();
     }
+    public bool CheckEmpty(CardInfo card)
+    {
+        foreach ( MinionInfo minion in minionsInLane )
+        {
+            if ( minion.card.cardTeam == card.cardTeam ) return false;
+        }
+        return true;
+    }
 }

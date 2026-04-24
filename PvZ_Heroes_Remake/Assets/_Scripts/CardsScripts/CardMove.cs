@@ -25,7 +25,7 @@ public class CardMove : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if ( draggedCard.cost <= ((draggedCard.cardTeam == Team.Man)? BoardManager.Instance.manPlayer.mana:BoardManager.Instance.womanPlayer.mana) )
         {
             Debug.Log(playability[0].ToString() + playability[1].ToString());
-            if ( playability[0] )
+            if ( playability[0] && (draggedCard.cardTeam == Team.Man || draggedCard.cardTeam == Team.Woman && draggedCard.type == CardType.Minion ))
             {
                 UIManager.Instance.ShowDropBoxes(draggedCard.Amphibious);
             }
